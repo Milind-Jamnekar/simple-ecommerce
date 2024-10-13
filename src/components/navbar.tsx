@@ -6,26 +6,29 @@ import {
   NavbarItem,
   Navbar as UINavbar,
 } from "@nextui-org/react";
+import { Form, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <UINavbar>
       <NavbarBrand>
-        <p className="font-bold text-inherit">ACME store</p>
+        <NavLink to="/" className="font-bold text-inherit">
+          ACME store
+        </NavLink>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <form id="search-form" role="search">
+          <Form id="search-form" role="search">
             <Input
               id="q"
               aria-label="Search contacts"
               placeholder="Search"
               type="search"
-              name="q"
+              name="search"
             />
             <div id="search-spinner" aria-hidden hidden={true} />
             <div className="sr-only" aria-live="polite"></div>
-          </form>
+          </Form>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
